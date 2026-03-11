@@ -1,101 +1,148 @@
-// let units = Number(prompt("Enter electric units consumed:"));
+// let units = Number(prompt("enter units"));
 
-// if (isNaN(units) || units < 0) {
-//     console.log("enter a valid number.");
-// } else {
-//     let totalCost = 0;
+// let amount = 0;
 
-//     if (units <= 100) {
-//         totalCost = units * 4;
-//     } else if (units <= 200) {
-//         totalCost = (100 * 4) + ((units - 100) * 6);
-//     } else if (units <= 400) {
-//         totalCost = (100 * 4) + (100 * 6) + ((units - 200) * 8);
-//     } else {
-//         totalCost = (100 * 4) + (100 * 6) + (200 * 8) + ((units - 400) * 10);
-//     }
-
-//     console.log(`Total Units: ${units}`);
-//     console.log(`Total Cost: Rs ${totalCost}`);
-// }
-
-
-
-// let unit =prompt('enter a units')
-// amount = 0
-
-// if (unit>400){
-//     amount+=(unit-400)*10
-//     unit = 400
-// }
-// if (unit>200){
-//     amount+=(unit-200)*8
-//     unit = 200
-// }
-// if (unit>100){
-//     amount+=(unit-100)*6
-//     unit=100
-// }
-// if (unit>0){
-//     amount+=(unit-0)*4
-//     unit=0
+// if (isNaN(units) || units < 0 ) {
+//   alert("pls provide proper input");
 // }
 // else{
-//     console.log('not valid')
+
+//   if (units > 400) {
+//     amount += (units - 400) * 10;
+//     units = units - 400;
+//   }
+//   if (units > 300) {
+//     amount += (units - 300) * 8;
+//     units = units - 300;
+//   }
+//   if (units > 200) {
+//     amount += (units - 200) * 6;
+//     units = units - 200;
+//   }
+//   if (units > 100) {
+//     amount += (units - 100) * 4;
+//     units = units - 100;
+//   }
+//   if (units > 0) {
+//     amount += (units - 0) * 2;
+//     units = units - 0;
+//   }
+
+// }
+// console.log(amount);
+
+// let amount = prompt('enter a amount')
+
+// if (amount>=500){
+// notes = Math.floor(amount/500)
+// amount= amount-notes*500
+// console.log('500 notes ',notes)
+// }
+// if (amount>=200){
+// notes = Math.floor(amount/200)
+// amount= amount-notes*200
+// console.log('200 notes ',notes)
+// }
+// if (amount>100){
+// notes = Math.floor(amount/100)
+// amount= amount-notes*100
+// console.log('100 notes ',notes)
+// }
+// if (amount>50){
+// notes = Math.floor(amount/50)
+// amount= amount-notes*50
+// console.log('50 notes ',notes)
+// }
+// if (amount>10){
+// notes = Math.floor(amount/10)
+// amount= amount-notes*10
+// console.log('10 notes ',notes)
+// }
+// if (amount>5){
+// notes = Math.floor(amount/5)
+// amount= amount-notes*5
+// console.log('5 notes ',notes)
+// }
+// if (amount>2){
+// notes = Math.floor(amount/2)
+// amount= amount-notes*2
+// console.log('2 notes ',notes)
 // }
 // console.log(amount)
 
+//write a check the given mobile number or not
 
+// let number = Number(prompt('enter a number'))
 
-let amount = prompt('enter a amount')
+// if (isNaN(number) || number < 0 || number.toString().length !== 10) {
+//   alert('provide proper input')
+// }
+// else{
+//   console.log('correct number')
+// }
 
-if(amount<0 || isNaN(amount)){
-    alert('provid proper input')
+//write a program to check program to check goodmorning good after and good night
+
+// let hour = new Date().getHours();
+
+// if (hour >= 5 || hour < 12) {
+//   console.log("Good Morning");
+// }
+// else if (hour >= 12 || hour < 17) {
+//   console.log("Good Afternoon");
+// }
+// else if (hour >= 17 || hour < 21) {
+//   console.log("Good Evening");
+// }
+// else {
+//   console.log("Good Night");
+// }
+
+//check input given or not
+
+// let inp = prompt('enter a input')
+// if (inp==''){
+//     alert('pls provide')
+// }else{
+//     console.log(inp)
+// }
+
+//atm machine
+
+console.log("well come to deekshi bank");
+
+let balence = 0;
+let agine = true;
+
+while (agine) {
+  let op = prompt(
+    "select the option 1.deposit, 2.withdrow, 3.balence",
+  ).toLocaleLowerCase();
+
+  if (op === "1" || op === "d" || op === "deposit") {
+    let d = Number(prompt("enter amount to deposit"));
+    if (d < 0 || isNaN(d)) {
+      alert("enter correct amount");
+    } else {
+      balence += d;
+      console.log("your balence is", balence);
+    }
+  }
+  if (op === "2" || op === "withdrow" || op === "w") {
+    let w = Number(prompt("enter a withdrow amount"));
+    if (w < 0 || isNaN(w)) {
+      alert("insuficant balens");
+    } else if (w > balence) {
+      alert("insuficeant balence");
+    } else {
+      balence -= w;
+      console.log("amount withdrow sucessfully", w);
+      console.log("your balence is", balence);
+    }
+  }
+  if (op === "3" || op === "b" || op === "balence") {
+    console.log(balence);
+  }
+  agine = confirm("yes or no");
 }
-else{
-if (amount>=500){
-    let notes = Math.floor(amount/500)
-    console.log(notes,'=== 500')
-    amount-=notes*500
-}
-if (amount>=200){
-    let notes = Math.floor(amount/200)
-    console.log(notes,'=== 200')
-    amount-=notes*200
-}
-if (amount>=100){
-    let notes = Math.floor(amount/100)
-    console.log(notes,'=== 100')
-    amount-=notes*100
-}
-if (amount>=50){
-    let notes = Math.floor(amount/50)
-    console.log(notes,'=== 50')
-    amount-=notes*50
-}
-if (amount>=20){
-    let notes = Math.floor(amount/20)
-    console.log(notes,'=== 20')
-    amount-=notes*20
-}
-if (amount>=10){
-    let notes = Math.floor(amount/10)
-    console.log(notes,'=== 10')
-    amount-=notes*10
-}
-if (amount>=5){
-    let notes = Math.floor(amount/5)
-    console.log(notes,'=== 5')
-    amount-=notes*5
-}
-if (amount>=2){
-    let notes = Math.floor(amount/2)
-    console.log(notes,'=== 2')
-    amount-=notes*2
-}
-if (amount>=1){
-    let notes = Math.floor(amount/1)
-    console.log(notes,'=== 1')
-    amount-=notes*1
-}
-}
+console.log('thanks for the time')
